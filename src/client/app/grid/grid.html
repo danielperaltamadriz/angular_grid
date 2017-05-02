@@ -1,0 +1,30 @@
+<section class="mainbar">
+  <section class="matter">
+    <div class="container">
+      <div class="row">
+        <div class="widget wviolet">
+          <div ht-widget-header title="{{vm.title}}"></div>
+          <div class="widget-content user">
+            <h3>GRID</h3>
+          </div>
+          <div class="widget-foot">
+            <div class="clearfix">
+              <div ng-repeat="(index, asset) in vm.assets">
+                <div>
+                  <button ng-click="vm.isCollapsed[index] = !vm.isCollapsed[index]">Collapse</button>
+                  <label>                    
+                    {{asset.name}}
+                  </label>
+                </div>
+                <div uib-collapse="vm.isCollapsed[index]" ui-grid="vm.grids[index]"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button ng-click="vm.continue()">Next Step</button>
+      </div>
+    </div>
+  </section>
+</section>
